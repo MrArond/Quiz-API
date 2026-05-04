@@ -45,4 +45,28 @@ public class QuestionController : ControllerBase
         }
         return BadRequest(result.Error);
     }
+
+    [HttpPut("UpdateQuestion")]
+    public async Task<IActionResult> UpdateQuestion([FromBody] UpdateQuestionRequest request)
+    {
+        var command = new UpdateQuestionCommand(request.QuestionId, request.Text);
+        var result = await _mediator.Send(command);
+        if (result.IsSuccess)
+        {
+            return Ok(result.Value);
+        }
+        return BadRequest(result.Error);
+    }
+
+    [HttpDelete("DeleteQuestion/{questionId}")]
+    public async Task<IActionResult> DeleteQuestion(Guid questionId)
+    {
+        var command = new DeleteQuestionCommand(questionId);
+        var result = await _mediator.Send(command);
+        if (result.IsSuccess)
+        {
+            return Ok(result.Value);
+        }
+        return BadRequest(result.Error);
+    }
 }

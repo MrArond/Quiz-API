@@ -19,6 +19,13 @@ public class Answer
         IsCorrect = isCorrect;
         QuestionId = questionId;
     }
+
+    public void Update(string? text, bool isCorrect)
+    {
+        Text = text;
+        IsCorrect = isCorrect;
+    }
+
     private Answer()
     {
     }

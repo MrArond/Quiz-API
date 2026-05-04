@@ -24,6 +24,7 @@ public class Program
 
            builder.Services.AddScoped<IQuizRepository, QuizRepository>();
            builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+           builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
         builder.Services.AddEndpointsApiExplorer();
            builder.Services.AddSwaggerGen();
 

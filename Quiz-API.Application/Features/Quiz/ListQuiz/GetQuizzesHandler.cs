@@ -12,7 +12,7 @@ namespace Quiz_API.Application.Features.Quiz.ListQuiz
 {
     public class GetQuizzesHandler : IRequestHandler<GetQuizzesQuery, Result<GetQuizzesResponse>>
     {
-        public readonly IQuizRepository _quizRepository;
+        private readonly IQuizRepository _quizRepository;
         public GetQuizzesHandler(IQuizRepository quizRepository)
         {
             _quizRepository = quizRepository;

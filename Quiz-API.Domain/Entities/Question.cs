@@ -19,6 +19,12 @@ public class Question
         Text = text;
         QuizId = quizId;
     }
+
+    public void Update(string? text)
+    {
+        Text = text;
+    }
+
     private Question()
     {
     }

@@ -11,5 +11,11 @@ namespace Quiz_API.Application.Abstractions.Services
         Task<Question> AddQuestionAsync(Question question);
 
         Task<List<Question>> GetQuestionsByQuizIdAsync(Guid quizId);
+
+        Task<Question> GetQuestionByIdAsync(Guid questionId);
+
+        Task<Question> UpdateQuestionAsync(Question question);
+
+        Task<bool> DeleteQuestionAsync(Guid questionId);
     }
 }

@@ -11,7 +11,7 @@ namespace Quiz_API.Application.Features.Quiz.ListQuiz
 {
     public class AddQuizHandler : IRequestHandler<AddQuizCommand, Result<AddQuizResponse>>
     {
-        public readonly IQuizRepository _quizRepository;
+        private readonly IQuizRepository _quizRepository;
 
         public AddQuizHandler(IQuizRepository quizRepository)
         {
@@ -20,21 +20,14 @@ namespace Quiz_API.Application.Features.Quiz.ListQuiz
 
         public async Task<Result<AddQuizResponse>> Handle(AddQuizCommand request, CancellationToken cancellationToken)
         {
-            try
-            {
-                var quiz = new Domain.Entities.Quiz(
-                    id: Guid.CreateVersion7(),
-                    name: request.Name, 
-                    description: request.Description, 
-                    DateTime.UtcNow
-                );
-                await _quizRepository.AddQuizAsync(quiz);
-                return Result<AddQuizResponse>.Success(new AddQuizResponse(true));
-            }
-            catch (Exception ex)
-            {
-                return Result<AddQuizResponse>.Failure("Failed to add quiz. " + ex.Message);
-            }
+            var quiz = new Domain.Entities.Quiz(
+                id: Guid.CreateVersion7(),
+                name: request.Name, 
+                description: request.Description, 
+                DateTime.UtcNow
+            );
+            await _quizRepository.AddQuizAsync(quiz);
+            return Result<AddQuizResponse>.Success(new AddQuizResponse(true));
         }
     }
 }

@@ -53,5 +53,17 @@ namespace Quiz_API.Controllers
             }
             return BadRequest(result.Error);
         }
+
+        [HttpGet("GetAnswersByQuestionId/{questionId}")]
+        public async Task<IActionResult> GetAnswersByQuestionId(Guid questionId)
+        {
+            var query = new GetAnswersQuery(questionId);
+            var result = await _mediator.Send(query);
+            if (result.IsSuccess)
+            {
+                return Ok(result.Value);
+            }
+            return BadRequest(result.Error);
+        }
     }
 }

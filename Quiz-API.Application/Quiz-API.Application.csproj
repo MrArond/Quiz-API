@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <Folder Include="Abstractions\Repositories\" />
+    <Folder Include="Features\Quiz\DeleteQuiz\" />
+    <Folder Include="Features\Quiz\UpdateQuiz\" />
   </ItemGroup>
 
   <ItemGroup>

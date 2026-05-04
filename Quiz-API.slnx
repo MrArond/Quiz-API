@@ -5,4 +5,5 @@
   <Project Path="Quiz-API.Domain/Quiz-API.Domain.csproj" />
   <Project Path="Quiz-API.Infrasctructure/Quiz-API.Infrasctructure.csproj" />
   <Project Path="Quiz-API/Quiz-API.csproj" />
+  <Project Path="Quiz/Quiz.csproj" Id="9b52e7e5-daf5-47a1-aa3b-836390803854" />
 </Solution>

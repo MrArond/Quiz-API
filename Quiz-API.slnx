@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Quiz-API.Application.UnitTests/Quiz-API.Application.UnitTests.csproj" />
+  <Project Path="Quiz-API.Application/Quiz-API.Application.csproj" />
+  <Project Path="Quiz-API.Contracts/Quiz-API.Contracts.csproj" />
+  <Project Path="Quiz-API.Domain/Quiz-API.Domain.csproj" />
+  <Project Path="Quiz-API.Infrasctructure/Quiz-API.Infrasctructure.csproj" />
+  <Project Path="Quiz-API/Quiz-API.csproj" />
+</Solution>

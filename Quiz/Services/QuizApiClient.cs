@@ -17,7 +17,7 @@ namespace Quiz.Services
         public QuizApiClient()
         {
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:7248/"); // You may need to update this URL to match your API port
+            _httpClient.BaseAddress = new Uri("https://localhost:7248/"); 
         }
 
         public async Task<List<QuizModel>> GetQuizzesAsync()
